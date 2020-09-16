@@ -5,6 +5,7 @@ var monkey , monkey_running
 var anana ,bananaImage, obstacle, obstacleImage
 var bananaGroup, stoneGroup, banana
 var score, ground
+var survivaltime=0
 
 function preload(){
   
@@ -59,7 +60,7 @@ function draw() {
     bananaGroup.destroyEach() 
     stoneGroup.destroyEach()
   }
-
+   survivaltime=Math.ceil(frameCount/getFrameRate())
     
   }
   if (gameState===END){
@@ -67,8 +68,13 @@ function draw() {
      textSize(30)
      text("Game Over",150,100) 
   }
-  drawSprites()
   
+  
+  
+  textSize(20)
+  text("survival Time= "+survivaltime,330,100)
+  
+  drawSprites()
 }
 
 
